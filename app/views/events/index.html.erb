@@ -2,10 +2,10 @@
 
 <% content_for :title, "Events" %>
 
-<h1>Events</h1>
+<h1>Past Events</h1>
 
-<div id="events">
-  <% @events.each do |event| %>
+<div id="past_events">
+  <% @past_events.each do |event| %>
     <%= render event %>
     <p>
       <%= link_to "Show this event", event %>
@@ -13,4 +13,17 @@
   <% end %>
 </div>
 
+<h1>Future Events</h1>
+
+<div id="future_events">
+  <% @future_events.each do |event| %>
+    <%= render event %>
+    <p>
+      <%= link_to "Show this event", event %>
+    </p>
+  <% end %>
+</div>
+
+<br>
+<br>
 <%= link_to "New event", new_event_path %>

@@ -8,14 +8,28 @@
     </p>
   <% end %>
 </div>
+<br>
 
 <h1><%= @user.email %>'s Attended Events</h1>
 
 <div id="attended_events">
-  <% @user.attended_events.each do |event| %>
+  <% @user.attended_events.where("date < ?", Time.current).each do |event| %>
     <%= render event %>
     <p>
       <%= link_to "Show this event", event %>
     </p>
+    <br>
+  <% end %>
+  <br>
+
+<h1>Events <%= @user.email %> Will Attend</h1>
+
+<div id="attended_events">
+  <% @user.attended_events.where("date >= ?", Time.current).each do |event| %>
+    <%= render event %>
+    <p>
+      <%= link_to "Show this event", event %>
+    </p>
+    <br>
   <% end %>
 </div>
