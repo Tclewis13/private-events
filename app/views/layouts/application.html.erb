@@ -18,8 +18,8 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p style="color: green"><%= notice %></p>
+    <p style="color: red"><%= alert %></p>
     <div>
       <%if user_signed_in? %>
         <%= link_to "Profile", edit_user_registration_path%>
